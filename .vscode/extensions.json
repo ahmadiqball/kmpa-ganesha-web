@@ -3,7 +3,6 @@
     "dbaeumer.vscode-eslint",
     "antfu.goto-alias",
     "yoavbls.pretty-ts-errors",
-    "antfu.unocss",
-    "vue.volar"
+    "antfu.unocss"
   ]
 }
