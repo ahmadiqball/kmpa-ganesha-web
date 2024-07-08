@@ -7,7 +7,7 @@ export function LayoutFooter() {
         <figure className="flex items-center gap-3 color-white">
           <Image alt="logo" height={ 140 } src="/assets/images/logo-white.png" width={ 140 } />
 
-          <h3 className="text-4xl w-40 font-florest">KMPA GANESHA ITB</h3>
+          <h3 className="text-4xl w-40 font-florest">KMPA Ganesha ITB</h3>
         </figure>
 
         <p className="color-white w-89">
