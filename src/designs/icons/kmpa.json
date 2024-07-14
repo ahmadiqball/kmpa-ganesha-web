@@ -25,8 +25,16 @@
       "body": "<path d=\"M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z\" fill=\"currentColor\" />",
       "width": 448,
       "height": 512
+    },
+    "arrow-right-long": {
+      "body": "<path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path>",
+      "width": 20,
+      "heigth": 20
+    },
+    "arrow-left-long": {
+      "body": "<path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z\" clip-rule=\"evenodd\"></path>",
+      "width": 20,
+      "heigth": 20
     }
-  },
-  "height": 24,
-  "width": 24
+  }
 }
