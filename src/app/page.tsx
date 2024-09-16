@@ -10,7 +10,7 @@ export default function Home() {
 
       <LandingGallery />
 
-      <CarouselArticle />
+      <CarouselArticle title="Artikel Terbaru" />
 
       <LandingImageBanner />
     </>

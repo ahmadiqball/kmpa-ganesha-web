@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import Image from 'next/image';
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './carousel';
@@ -12,18 +13,28 @@ const articles = [
   { date: '5 April 2025', image: '/assets/images/article-3.png', title: 'Becanda di Batu' },
 ];
 
-export function CarouselArticle() {
+interface CarouselArticleProps {
+  title?: string;
+  variant?: 'dark' | 'light';
+}
+
+export function CarouselArticle({ title, variant = 'dark' }: CarouselArticleProps) {
   return (
-    <section className="mt-14">
+    <section className="pt-14">
       <Carousel
         opts={{
           loop: true,
         }}
       >
         <div className="max-w-250 mx-auto flex justify-between items-center">
-          <h4 className="font-poppins color-[#0A2429] font-semibold text-10">Artikel Terbaru</h4>
+          <h4 className={ classNames('font-poppins font-semibold text-10',
+            variant === 'dark' ? 'color-[#0A2429]' : 'color-white',
+          ) }
+          >
+            { title }
+          </h4>
 
-          <div className="flex gap-5">
+          <div className={ classNames('flex gap-5', variant === 'dark' ? 'color-[#0A2429]' : 'color-white') }>
             <CarouselPrevious />
 
             <CarouselNext />
