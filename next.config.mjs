@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+import UnoCss from '@unocss/webpack';
 
+const nextConfig = {
+  webpack: (config) => {
+    config.plugins.push(
+      UnoCss,
+    );
+
+    return config;
+  },
 };
 
 export default nextConfig;
