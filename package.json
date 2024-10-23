@@ -10,13 +10,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.1.0",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@sanity/client": "^6.22.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "3",
     "classnames": "^2.5.1",
     "embla-carousel-react": "^8.1.6",
     "next": "14.2.3",
+    "next-sanity": "^9.5.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sanity": "3",
+    "styled-components": "6"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
@@ -28,6 +35,7 @@
     "@vinicunca/eslint-config": "^2.5.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",
+    "eslint-plugin-node": "^11.1.0",
     "lint-staged": "^15.2.4",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5",

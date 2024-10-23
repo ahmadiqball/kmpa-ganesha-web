@@ -1,4 +1,4 @@
 @import '@unocss/reset/tailwind.css';
 @unocss all;
 
-@import '../designs/fonts/fonts.css';
+@import '../../designs/fonts/fonts.css';
