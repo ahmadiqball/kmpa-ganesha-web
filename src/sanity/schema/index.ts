@@ -1,0 +1,43 @@
+import type { SchemaTypeDefinition } from 'sanity';
+
+import { articleSchema } from './article.schema';
+import { articleHighlightSchema } from './components/article-highlight.schema';
+import { dividerSchema } from './components/divider.schema';
+import { executiveBoardSchema } from './components/executive-board.schema';
+import { fullSpanMediaSchema } from './components/full-span-media.schema';
+import { gallerySchema } from './components/gallery.schema';
+import { heroBannerCarouselSchema } from './components/hero-banner-carousel.schema';
+import { heroBannerTextSchema } from './components/hero-banner-text.schema';
+import { highlightCardSchema } from './components/highlight-card.schema';
+import { imageBannerSchema } from './components/image-banner.schema';
+import { infoBlockSchema } from './components/info-block.schema';
+import { infoBreakdownSchema } from './components/info-breakdown.schema';
+import { infoTilesSchema } from './components/info-tiles.schema';
+import { productHighlightSchema } from './components/product-highlight.schema';
+import { recentArticlesSchema } from './components/recent-articles.schema';
+import { portableTextSchema } from './fields/portable-text.schema';
+import { pageSchema } from './page.schema';
+
+export const schema: { types: Array<SchemaTypeDefinition> } = {
+  types: [
+    pageSchema,
+    articleSchema,
+
+    portableTextSchema,
+
+    heroBannerCarouselSchema,
+    highlightCardSchema,
+    recentArticlesSchema,
+    dividerSchema,
+    fullSpanMediaSchema,
+    heroBannerTextSchema,
+    infoTilesSchema,
+    infoBlockSchema,
+    articleHighlightSchema,
+    gallerySchema,
+    infoBreakdownSchema,
+    productHighlightSchema,
+    executiveBoardSchema,
+    imageBannerSchema,
+  ],
+};

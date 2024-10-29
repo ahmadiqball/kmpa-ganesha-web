@@ -11,6 +11,7 @@ module.exports = vinicuncaESLint({
 
   rules: {
     'node/prefer-global/process': 'off',
+    'perfectionist/sort-objects': 'off',
   },
 
   userConfigs: [

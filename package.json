@@ -14,6 +14,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@sanity/client": "^6.22.1",
+    "@sanity/color-input": "^4.0.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "3",
     "classnames": "^2.5.1",
@@ -23,6 +24,7 @@
     "react": "^18",
     "react-dom": "^18",
     "sanity": "3",
+    "sanity-plugin-icon-picker": "^3.3.0",
     "styled-components": "6"
   },
   "devDependencies": {
