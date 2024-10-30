@@ -29,6 +29,7 @@
     "react-dom": "^18",
     "sanity": "3",
     "sanity-plugin-icon-picker": "^3.3.0",
+    "sanity-plugin-media": "^2.3.2",
     "styled-components": "6"
   },
   "devDependencies": {
