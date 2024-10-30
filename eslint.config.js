@@ -9,18 +9,19 @@ module.exports = vinicuncaESLint({
     },
   },
 
+  unocss: true,
+
   rules: {
     'node/prefer-global/process': 'off',
     'perfectionist/sort-objects': 'off',
+    'perfectionist/sort-interfaces': 'off',
+    'perfectionist/sort-classes': 'off',
+    'ts/no-use-before-define': 'off',
   },
-
-  userConfigs: [
-    {
-      rules: {
-        'react-hooks/rules-of-hooks': 'off',
-        'ts/restrict-plus-operands': 'off',
-        'vinicunca/cognitive-complexity': 'off',
-      },
-    },
-  ],
+}, {
+  files: ['**/sanity.entity.ts'],
+  rules: {
+    'ts/consistent-type-definitions': 'off',
+    'ts/no-use-before-define': 'off',
+  },
 });

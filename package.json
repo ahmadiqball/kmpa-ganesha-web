@@ -7,7 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:sanity-types": "eslint src/sanity/sanity.entity.ts --fix",
+    "gen:extract": "sanity schema extract --path src/sanity/schema-extract.json --enforce-required-fields",
+    "gen:sanity-types": "sanity typegen generate && pnpm lint:sanity-types",
+    "gen:types": "pnpm gen:extract && pnpm gen:sanity-types"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",

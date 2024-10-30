@@ -27,7 +27,7 @@ export const infoBreakdownSchema = defineType({
             }),
             defineField({
               name: 'icon',
-              type: 'icon',
+              type: 'iconPicker',
             }),
             defineField({
               name: 'text',

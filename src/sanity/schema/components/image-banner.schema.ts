@@ -1,7 +1,7 @@
 import { defineField, defineType } from 'sanity';
 
 export const imageBannerSchema = defineType({
-  name: 'infoBanner',
+  name: 'imageBanner',
   type: 'object',
   fields: [
     defineField({
