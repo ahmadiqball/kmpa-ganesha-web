@@ -1,7 +1,7 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const pageSchema = defineType({
-  name: 'Page',
+  name: 'page',
   type: 'document',
   fields: [
     defineField({

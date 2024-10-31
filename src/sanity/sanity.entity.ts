@@ -13,6 +13,9 @@
  */
 
 // Source: schema.json
+// Query TypeMap
+import '@sanity/client';
+
 export type SanityImagePaletteSwatch = {
   _type: 'sanity.imagePaletteSwatch';
   background?: string;
@@ -413,7 +416,7 @@ export type Page = {
   _createdAt: string;
   _id: string;
   _rev: string;
-  _type: 'Page';
+  _type: 'page';
   _updatedAt: string;
   components?: Array<{
     _key: string;
@@ -505,6 +508,15 @@ export type SanityImageMetadata = {
   palette?: SanityImagePalette;
 };
 
+export type MediaTag = {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: 'media.tag';
+  _updatedAt: string;
+  name?: Slug;
+};
+
 export type Slug = {
   _type: 'slug';
   current: string;
@@ -551,5 +563,51 @@ export type HslaColor = {
   s?: number;
 };
 
-export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | Divider | ExecutiveBoard | FullSpanMedia | Gallery | Geopoint | HeroBannerCarousel | HeroBannerText | HighlightCard | HslaColor | HsvaColor | IconPicker | ImageBanner | InfoBlock | InfoBreakdown | InfoTiles | Page | PortableText | ProductHighlight | RecentArticles | RgbaColor | SanityAssetSourceData | SanityFileAsset | SanityImageAsset | SanityImageCrop | SanityImageDimensions | SanityImageHotspot | SanityImageMetadata | SanityImagePalette | SanityImagePaletteSwatch | Slug;
+export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | Divider | ExecutiveBoard | FullSpanMedia | Gallery | Geopoint | HeroBannerCarousel | HeroBannerText | HighlightCard | HslaColor | HsvaColor | IconPicker | ImageBanner | InfoBlock | InfoBreakdown | InfoTiles | MediaTag | Page | PortableText | ProductHighlight | RecentArticles | RgbaColor | SanityAssetSourceData | SanityFileAsset | SanityImageAsset | SanityImageCrop | SanityImageDimensions | SanityImageHotspot | SanityImageMetadata | SanityImagePalette | SanityImagePaletteSwatch | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: src/sanity/query/sanity.query.ts
+// Variable: pageQuery
+// Query: *[_type == 'page' && url.current == $url][0]
+export type PageQueryResult = {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: 'page';
+  _updatedAt: string;
+  components?: Array<{
+    _key: string;
+  } & ArticleHighlight | {
+    _key: string;
+  } & Divider | {
+    _key: string;
+  } & ExecutiveBoard | {
+    _key: string;
+  } & FullSpanMedia | {
+    _key: string;
+  } & Gallery | {
+    _key: string;
+  } & HeroBannerCarousel | {
+    _key: string;
+  } & HeroBannerText | {
+    _key: string;
+  } & HighlightCard | {
+    _key: string;
+  } & ImageBanner | {
+    _key: string;
+  } & InfoBlock | {
+    _key: string;
+  } & InfoBreakdown | {
+    _key: string;
+  } & InfoTiles | {
+    _key: string;
+  } & ProductHighlight | {
+    _key: string;
+  } & RecentArticles>;
+  title: string;
+  url: Slug;
+} | null;
+declare module '@sanity/client' {
+  interface SanityQueries {
+    '\n  *[_type == \'page\' && url.current == $url][0]\n': PageQueryResult;
+  }
+}
