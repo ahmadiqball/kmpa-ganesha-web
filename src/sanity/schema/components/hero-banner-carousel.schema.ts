@@ -7,10 +7,12 @@ export const heroBannerCarouselSchema = defineType({
     defineField({
       name: 'carousel',
       type: 'array',
+      validation: (Rule) => Rule.min(1).required(),
       of: [
         defineArrayMember({
           name: 'carouselItem',
           type: 'object',
+          validation: (Rule) => Rule.required(),
           fields: [
             defineField({
               name: 'title',

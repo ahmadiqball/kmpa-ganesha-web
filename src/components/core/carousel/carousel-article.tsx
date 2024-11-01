@@ -26,7 +26,7 @@ export function CarouselArticle({ title, variant = 'dark' }: CarouselArticleProp
           loop: true,
         }}
       >
-        <div className="max-w-250 mx-auto flex justify-between items-center">
+        <div className="mx-auto max-w-250 flex items-center justify-between">
           <h4 className={ classNames('font-poppins font-semibold text-10',
             variant === 'dark' ? 'color-[#0A2429]' : 'color-white',
           ) }
@@ -43,19 +43,19 @@ export function CarouselArticle({ title, variant = 'dark' }: CarouselArticleProp
 
         <CarouselContent className="my-10">
           { articles.map((article) => (
-            <CarouselItem className="h-89 basis-1/3 mx-3 relative shadow-[4px_4px_10px_4px_rgba(0,0,0,.2)]" key={ article.date }>
+            <CarouselItem className="relative mx-3 h-89 basis-1/3 shadow-[4px_4px_10px_4px_rgba(0,0,0,.2)]" key={ article.date }>
               <Image
                 alt={ article.title }
-                className="object-center w-full h-full"
+                className="h-full w-full object-center"
                 height={ 400 }
                 src={ article.image }
                 width={ 400 }
               />
 
-              <div className="absolute color-white font-poppins h-1/2 w-full bottom-0 flex flex-col justify-end px-8 py-8 bg-gradient-to-b from-transparent to-black">
-                <span className="text-lg font-light ">{ article.date }</span>
+              <div className="absolute bottom-0 h-1/2 w-full flex flex-col justify-end from-transparent to-black bg-gradient-to-b px-8 py-8 color-white font-poppins">
+                <span className="text-lg font-light">{ article.date }</span>
 
-                <h6 className="text-2xl font-semibold mt-1">{ article.title }</h6>
+                <h6 className="mt-1 text-2xl font-semibold">{ article.title }</h6>
               </div>
             </CarouselItem>
           )) }

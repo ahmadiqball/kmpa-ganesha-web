@@ -9,5 +9,15 @@ export const articleSchema = defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'url',
+      type: 'slug',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'image',
+      type: 'image',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
 });

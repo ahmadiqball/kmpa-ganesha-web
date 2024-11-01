@@ -1,24 +1,24 @@
-import { usePathname } from 'next/navigation';
-import { createClient, groq } from 'next-sanity';
-
-import { apiVersion, dataset, projectId } from '~~/sanity/env';
+import { groq } from 'next-sanity';
 
 import type { PageQueryResult } from '../sanity.entity';
 
-const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-});
+import { client } from '../lib/client';
 
-export async function useSanityPage() {
-  const url = usePathname();
-
+export async function useSanityPage(slug?: string) {
   const pageQuery = groq`
-    *[_type == 'page' && url.current == $url][0]
+    *[_type == 'page' && url.current == $url][0] {
+      ...,
+      components[] {
+        ...,
+        _type == 'recentArticles' => {
+          ...,
+          articles[]->
+        }
+      }
+    }
   `;
 
   return client.fetch<PageQueryResult>(pageQuery, {
-    url,
+    url: slug,
   });
 };

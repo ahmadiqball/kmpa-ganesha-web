@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { LayoutFooter } from '~~/components/layout/layout-footer';
-import { LayoutHeader } from '~~/components/layout/layout-header';
+import { LayoutFooter } from '~/components/layout/layout-footer';
+import { LayoutHeader } from '~/components/layout/layout-header';
 
 import './globals.css';
 
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <LayoutHeader />
 
-        <main className="min-h-screen mt-16.8">
+        <main className="mt-16.8 min-h-screen">
           { children }
         </main>
 

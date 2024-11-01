@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const recentArticlesSchema = defineType({
   name: 'recentArticles',
@@ -17,8 +17,14 @@ export const recentArticlesSchema = defineType({
     }),
     defineField({
       name: 'articles',
-      type: 'reference',
-      to: [{ type: 'article' }],
+      type: 'array',
+      validation: (Rule) => Rule.min(1).required(),
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'article' }],
+        }),
+      ],
     }),
   ],
 });

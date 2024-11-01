@@ -4,21 +4,19 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useState } from 'react';
 
-const images = [
-  '/assets/backgrounds/exploring-suoh.png',
-  '/assets/backgrounds/cianjur.jpg',
-  '/assets/backgrounds/bunikasih.jpg',
-];
+import type { PickPageComponent } from '~/sanity/lib/page-component.entity';
 
-export function LandingHero() {
+import { sanityImageUrlFor } from '~/sanity/lib/image';
+
+export function BlockHeroBannerCarousel({ carousel }: PickPageComponent<'heroBannerCarousel'>) {
   const [activeContent, setActiveContent] = useState(0);
 
   function changeActiveContent(action: 'next' | 'prev') {
     const factor = action === 'next' ? 1 : -1;
 
     if (activeContent + factor < 0) {
-      setActiveContent(images.length - 1);
-    } else if (activeContent + factor > images.length - 1) {
+      setActiveContent(carousel.length - 1);
+    } else if (activeContent + factor > carousel.length - 1) {
       setActiveContent(0);
     } else {
       setActiveContent(activeContent + factor);
@@ -28,27 +26,27 @@ export function LandingHero() {
   return (
     <section>
       <div
-        className="h-[80vh] bg-cover bg-no-repeat relative"
-        style={{ backgroundImage: `url(${images[activeContent]})` }}
+        className="relative h-[80vh] bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url(${sanityImageUrlFor(carousel[activeContent].backgroundImage).url()})` }}
       >
-        <div className="w-full h-full flex flex-col items-center justify-center color-white bg-black/40 ">
-          <h6 className="font-poppins text-3xl font-light">Exploring Suoh:</h6>
+        <div className="h-full w-full flex flex-col items-center justify-center bg-black/40 color-white">
+          <h6 className="text-3xl font-light font-poppins">Exploring Suoh:</h6>
 
-          <h1 className="font-florest text-[85px] leading-[1.05] max-w-[930px] mx-auto text-center">
+          <h1 className="mx-auto max-w-[930px] text-center text-[85px] leading-[1.05] font-florest">
             Synergy in conservation
           </h1>
         </div>
 
         <Image
           alt="map suoh"
-          className="absolute bottom-0 translate-y-1/2 z-5 left-20 w-73 h-73"
+          className="absolute bottom-0 left-20 z-5 h-73 w-73 translate-y-1/2"
           height={ 280 }
           src="/assets/backgrounds/map-suoh.png"
           width={ 280 }
         />
 
-        <div className="absolute z-5 bottom-0 right-1 translate-y-1/2 flex items-center gap-4">
-          { images.map((item, index) => (
+        <div className="absolute bottom-0 right-1 z-5 flex translate-y-1/2 items-center gap-4">
+          { carousel.map((item, index) => (
             <button onClick={ () => setActiveContent(index) }>
               <Image
                 alt="image"
@@ -57,13 +55,13 @@ export function LandingHero() {
                 }) }
                 height={ 137 }
                 key={ index }
-                src={ item }
+                src={ sanityImageUrlFor(item.backgroundImage).url() }
                 width={ 210 }
               />
             </button>
           )) }
 
-          <div className="flex gap-5 absolute right-1/6 bottom-0 translate-y-1/2">
+          <div className="absolute bottom-0 right-1/6 flex translate-y-1/2 gap-5">
             <button onClick={ () => changeActiveContent('prev') }>
               <Image
                 alt="boot"
@@ -86,26 +84,26 @@ export function LandingHero() {
         </div>
       </div>
 
-      <div className="relative bg-[#0A2429] pt-25.5 pb-50 color-white flex gap-22 justify-center">
+      <div className="relative flex justify-center gap-22 bg-[#0A2429] pb-50 pt-25.5 color-white">
         <div className="flex flex-col items-end text-end">
-          <h2 className="font-poppins text-5xl font-medium max-w-72">Mini Quote dari Artikel</h2>
+          <h2 className="max-w-72 text-5xl font-medium font-poppins">Mini Quote dari Artikel</h2>
 
-          <span className="font-manrope font-medium text-xl mt-6 block pb-6">Exploring Suoh</span>
+          <span className="mt-6 block pb-6 text-xl font-medium font-manrope">Exploring Suoh</span>
 
-          <span className="w-17 h-0.5 bg-white block" />
+          <span className="block h-0.5 w-17 bg-white" />
         </div>
 
         <div className="max-w-120">
-          <p className="font-manrope text-lg font-light">
+          <p className="text-lg font-light font-manrope">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
 
-          <i className="i-kmpa-arrow-right text-3xl color-white mt-10.5" />
+          <i className="i-kmpa-arrow-right mt-10.5 text-3xl color-white" />
         </div>
 
         <Image
           alt="divider-wave"
-          className="w-screen absolute bottom-0 left-0"
+          className="absolute bottom-0 left-0 w-screen"
           height={ 20 }
           src="/assets/backgrounds/bg-divider-wave.png"
           width={ 1000 }
@@ -113,4 +111,4 @@ export function LandingHero() {
       </div>
     </section>
   );
-}
+};
