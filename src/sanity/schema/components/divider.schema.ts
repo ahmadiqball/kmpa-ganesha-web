@@ -1,8 +1,10 @@
+import { PiWaveSine } from 'react-icons/pi';
 import { defineField, defineType } from 'sanity';
 
 export const dividerSchema = defineType({
   name: 'divider',
   type: 'object',
+  icon: PiWaveSine,
   fields: [
     defineField({
       name: 'type',

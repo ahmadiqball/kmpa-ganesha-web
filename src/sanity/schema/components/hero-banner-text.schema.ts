@@ -1,8 +1,10 @@
+import { RiLayoutBottomFill } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
 export const heroBannerTextSchema = defineType({
   name: 'heroBannerText',
   type: 'object',
+  icon: RiLayoutBottomFill,
   fields: [
     defineField({
       name: 'title',

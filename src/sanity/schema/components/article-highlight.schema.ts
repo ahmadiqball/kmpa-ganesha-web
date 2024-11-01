@@ -1,8 +1,10 @@
+import { GrArticle } from 'react-icons/gr';
 import { defineField, defineType } from 'sanity';
 
 export const articleHighlightSchema = defineType({
   name: 'articleHighlight',
   type: 'object',
+  icon: GrArticle,
   fields: [
     defineField({
       name: 'pretitle',

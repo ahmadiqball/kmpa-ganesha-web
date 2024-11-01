@@ -1,8 +1,10 @@
+import { RiBookletFill } from 'react-icons/ri';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const productHighlightSchema = defineType({
   name: 'productHighlight',
   type: 'object',
+  icon: RiBookletFill,
   fields: [
     defineField({
       name: 'title',

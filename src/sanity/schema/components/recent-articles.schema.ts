@@ -1,8 +1,10 @@
+import { BiSolidCarousel } from 'react-icons/bi';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const recentArticlesSchema = defineType({
   name: 'recentArticles',
   type: 'object',
+  icon: BiSolidCarousel,
   fields: [
     defineField({
       name: 'title',

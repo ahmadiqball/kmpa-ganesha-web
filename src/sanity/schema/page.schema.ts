@@ -1,3 +1,4 @@
+import { kebabCase } from 'lodash';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const pageSchema = defineType({
@@ -14,6 +15,9 @@ export const pageSchema = defineType({
       type: 'slug',
       options: {
         source: 'title',
+        slugify: (string) => {
+          return `/${kebabCase(string)}`;
+        },
       },
       validation: (Rule) => Rule.required(),
     }),

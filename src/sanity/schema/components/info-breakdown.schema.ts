@@ -1,8 +1,10 @@
+import { TfiLayoutGrid2Thumb } from 'react-icons/tfi';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const infoBreakdownSchema = defineType({
   name: 'infoBreakdown',
   type: 'object',
+  icon: TfiLayoutGrid2Thumb,
   fields: [
     defineField({
       name: 'title',

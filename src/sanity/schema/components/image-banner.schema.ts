@@ -1,8 +1,10 @@
+import { FaRegImage } from 'react-icons/fa';
 import { defineField, defineType } from 'sanity';
 
 export const imageBannerSchema = defineType({
   name: 'imageBanner',
   type: 'object',
+  icon: FaRegImage,
   fields: [
     defineField({
       name: 'backgroundImage',

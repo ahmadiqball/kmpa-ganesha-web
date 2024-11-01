@@ -1,8 +1,10 @@
+import { GrGallery } from 'react-icons/gr';
 import { defineField, defineType } from 'sanity';
 
 export const gallerySchema = defineType({
   name: 'gallery',
   type: 'object',
+  icon: GrGallery,
   fields: [
     defineField({
       name: 'title',

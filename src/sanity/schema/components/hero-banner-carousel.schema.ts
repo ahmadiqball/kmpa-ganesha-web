@@ -1,8 +1,10 @@
+import { PiFlagBanner } from 'react-icons/pi';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const heroBannerCarouselSchema = defineType({
   name: 'heroBannerCarousel',
   type: 'object',
+  icon: PiFlagBanner,
   fields: [
     defineField({
       name: 'carousel',

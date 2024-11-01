@@ -1,8 +1,10 @@
+import { BsFillGrid3X2GapFill } from 'react-icons/bs';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const infoTilesSchema = defineType({
   name: 'infoTiles',
   type: 'object',
+  icon: BsFillGrid3X2GapFill,
   fields: [
     defineField({
       name: 'title',

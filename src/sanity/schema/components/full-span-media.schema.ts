@@ -1,8 +1,10 @@
+import { FaRegImages } from 'react-icons/fa6';
 import { defineField, defineType } from 'sanity';
 
 export const fullSpanMediaSchema = defineType({
   name: 'fullSpanMedia',
   type: 'object',
+  icon: FaRegImages,
   fields: [
     defineField({
       name: 'image',

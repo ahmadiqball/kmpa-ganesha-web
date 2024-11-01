@@ -1,8 +1,10 @@
+import { FaPeopleGroup } from 'react-icons/fa6';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const executiveBoardSchema = defineType({
   name: 'executiveBoard',
   type: 'object',
+  icon: FaPeopleGroup,
   fields: [
     defineField({
       name: 'title',

@@ -1,8 +1,10 @@
+import { TfiLayoutMediaLeft } from 'react-icons/tfi';
 import { defineField, defineType } from 'sanity';
 
 export const infoBlockSchema = defineType({
   name: 'infoBlock',
   type: 'object',
+  icon: TfiLayoutMediaLeft,
   fields: [
     defineField({
       name: 'title',
