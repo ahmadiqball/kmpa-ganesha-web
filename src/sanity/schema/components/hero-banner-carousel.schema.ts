@@ -45,7 +45,7 @@ export const heroBannerCarouselSchema = defineType({
             }),
             defineField({
               name: 'summarySubtitle',
-              type: 'text',
+              type: 'string',
               validation: (Rule) => Rule.required(),
             }),
             defineField({
@@ -55,7 +55,7 @@ export const heroBannerCarouselSchema = defineType({
             }),
             defineField({
               name: 'link',
-              type: 'url',
+              type: 'string',
               validation: (Rule) => Rule.required(),
             }),
           ],

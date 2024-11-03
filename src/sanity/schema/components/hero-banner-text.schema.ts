@@ -42,11 +42,11 @@ export const heroBannerTextSchema = defineType({
     }),
     defineField({
       name: 'backgroundColor',
-      type: 'color',
+      type: 'colorPicker',
     }),
     defineField({
       name: 'gradientColor',
-      type: 'color',
+      type: 'colorPicker',
     }),
   ],
 });

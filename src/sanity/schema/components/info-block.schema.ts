@@ -35,7 +35,7 @@ export const infoBlockSchema = defineType({
     }),
     defineField({
       name: 'backgroundColor',
-      type: 'color',
+      type: 'colorPicker',
     }),
   ],
 });

@@ -26,46 +26,46 @@ export const pageSchema = defineType({
       type: 'array',
       of: [
         defineArrayMember({
-          type: 'heroBannerCarousel',
-        }),
-        defineArrayMember({
-          type: 'recentArticles',
-        }),
-        defineArrayMember({
-          type: 'highlightCard',
+          type: 'articleHighlight',
         }),
         defineArrayMember({
           type: 'divider',
         }),
         defineArrayMember({
-          type: 'heroBannerText',
+          type: 'executiveBoard',
         }),
         defineArrayMember({
           type: 'fullSpanMedia',
         }),
         defineArrayMember({
-          type: 'articleHighlight',
+          type: 'gallery',
         }),
         defineArrayMember({
-          type: 'infoBlock',
+          type: 'heroBannerCarousel',
         }),
         defineArrayMember({
-          type: 'infoTiles',
+          type: 'heroBannerText',
+        }),
+        defineArrayMember({
+          type: 'highlightCard',
         }),
         defineArrayMember({
           type: 'imageBanner',
         }),
         defineArrayMember({
-          type: 'gallery',
+          type: 'infoBlock',
         }),
         defineArrayMember({
           type: 'infoBreakdown',
         }),
         defineArrayMember({
+          type: 'infoTiles',
+        }),
+        defineArrayMember({
           type: 'productHighlight',
         }),
         defineArrayMember({
-          type: 'executiveBoard',
+          type: 'recentArticles',
         }),
       ],
     }),

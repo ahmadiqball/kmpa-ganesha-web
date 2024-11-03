@@ -15,6 +15,7 @@ import { infoBreakdownSchema } from './components/info-breakdown.schema';
 import { infoTilesSchema } from './components/info-tiles.schema';
 import { productHighlightSchema } from './components/product-highlight.schema';
 import { recentArticlesSchema } from './components/recent-articles.schema';
+import { colorPickerSchema } from './fields/color-picker.schema';
 import { portableTextSchema } from './fields/portable-text.schema';
 import { pageSchema } from './page.schema';
 
@@ -23,21 +24,22 @@ export const schema: { types: Array<SchemaTypeDefinition> } = {
     pageSchema,
     articleSchema,
 
+    colorPickerSchema,
     portableTextSchema,
 
-    heroBannerCarouselSchema,
-    highlightCardSchema,
-    recentArticlesSchema,
-    dividerSchema,
-    fullSpanMediaSchema,
-    heroBannerTextSchema,
-    infoTilesSchema,
-    infoBlockSchema,
     articleHighlightSchema,
-    gallerySchema,
-    infoBreakdownSchema,
-    productHighlightSchema,
+    dividerSchema,
     executiveBoardSchema,
+    fullSpanMediaSchema,
+    gallerySchema,
+    heroBannerCarouselSchema,
+    heroBannerTextSchema,
+    highlightCardSchema,
     imageBannerSchema,
+    infoBlockSchema,
+    infoBreakdownSchema,
+    infoTilesSchema,
+    productHighlightSchema,
+    recentArticlesSchema,
   ],
 };

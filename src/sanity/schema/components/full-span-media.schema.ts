@@ -16,7 +16,7 @@ export const fullSpanMediaSchema = defineType({
     }),
     defineField({
       name: 'gradientColor',
-      type: 'color',
+      type: 'colorPicker',
       options: {
         colorList: ['#FFF', '#0A2429', '#D68B30'],
       },
