@@ -10,6 +10,7 @@ import { sanityImageUrlFor } from '~/sanity/lib/image';
 
 export function BlockHeroBannerCarousel({ carousel }: PickPageComponent<'heroBannerCarousel'>) {
   const [activeContent, setActiveContent] = useState(0);
+  const activeCarousel = carousel[activeContent];
 
   function changeActiveContent(action: 'next' | 'prev') {
     const factor = action === 'next' ? 1 : -1;
@@ -27,23 +28,27 @@ export function BlockHeroBannerCarousel({ carousel }: PickPageComponent<'heroBan
     <section>
       <div
         className="relative h-[80vh] bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${sanityImageUrlFor(carousel[activeContent].backgroundImage).url()})` }}
+        style={{ backgroundImage: `url(${sanityImageUrlFor(activeCarousel.backgroundImage).url()})` }}
       >
         <div className="h-full w-full flex flex-col items-center justify-center bg-black/40 color-white">
-          <h6 className="text-3xl font-light font-poppins">Exploring Suoh:</h6>
+          <h6 className="text-3xl font-light font-poppins">{ activeCarousel.pretitle }</h6>
 
           <h1 className="mx-auto max-w-[930px] text-center text-[85px] leading-[1.05] font-florest">
-            Synergy in conservation
+            { activeCarousel.title }
           </h1>
         </div>
 
-        <Image
-          alt="map suoh"
-          className="absolute bottom-0 left-20 z-5 h-73 w-73 translate-y-1/2"
-          height={ 280 }
-          src="/assets/backgrounds/map-suoh.png"
-          width={ 280 }
-        />
+        { activeCarousel.mapImage
+          ? (
+            <Image
+              alt="map suoh"
+              className="absolute bottom-0 left-20 z-5 h-73 w-73 translate-y-1/2"
+              height={ 280 }
+              src={ sanityImageUrlFor(activeCarousel.mapImage).url() }
+              width={ 280 }
+            />
+            )
+          : null }
 
         <div className="absolute bottom-0 right-1 z-5 flex translate-y-1/2 items-center gap-4">
           { carousel.map((item, index) => (
@@ -86,28 +91,20 @@ export function BlockHeroBannerCarousel({ carousel }: PickPageComponent<'heroBan
 
       <div className="relative flex justify-center gap-22 bg-[#0A2429] pb-50 pt-25.5 color-white">
         <div className="flex flex-col items-end text-end">
-          <h2 className="max-w-72 text-5xl font-medium font-poppins">Mini Quote dari Artikel</h2>
+          <h2 className="max-w-72 text-5xl font-medium font-poppins">{ activeCarousel.summaryTitle }</h2>
 
-          <span className="mt-6 block pb-6 text-xl font-medium font-manrope">Exploring Suoh</span>
+          <span className="mt-6 block pb-6 text-xl font-medium font-manrope">{ activeCarousel.summarySubtitle }</span>
 
           <span className="block h-0.5 w-17 bg-white" />
         </div>
 
         <div className="max-w-120">
           <p className="text-lg font-light font-manrope">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            { activeCarousel.summaryText }
           </p>
 
           <i className="i-kmpa-arrow-right mt-10.5 text-3xl color-white" />
         </div>
-
-        <Image
-          alt="divider-wave"
-          className="absolute bottom-0 left-0 w-screen"
-          height={ 20 }
-          src="/assets/backgrounds/bg-divider-wave.png"
-          width={ 1000 }
-        />
       </div>
     </section>
   );

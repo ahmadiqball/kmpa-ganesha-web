@@ -71,48 +71,17 @@ export type Geopoint = {
   lng?: number;
 };
 
-export type ImageBanner = {
-  _type: 'imageBanner';
-  backgroundImage: {
-    _type: 'image';
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
-  buttonLink?: string;
-  buttonText?: string;
-  description?: string;
-  layout?: 'left' | 'right';
-  title?: string;
-};
-
-export type ExecutiveBoard = {
-  _type: 'executiveBoard';
-  description?: string;
-  members?: Array<{
+export type RecentArticles = {
+  _type: 'recentArticles';
+  articles: Array<{
     _key: string;
-    _type: 'member';
-    image: {
-      _type: 'image';
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-    };
-    memberID: string;
-    name: string;
-    position: string;
+    _ref: string;
+    _type: 'reference';
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: 'article';
   }>;
   title?: string;
+  type?: 'dark' | 'light';
 };
 
 export type ProductHighlight = {
@@ -144,104 +113,6 @@ export type ProductHighlight = {
       hotspot?: SanityImageHotspot;
     };
     link?: string;
-  }>;
-  title?: string;
-};
-
-export type InfoBreakdown = {
-  _type: 'infoBreakdown';
-  breakdowns?: Array<{
-    _key: string;
-    _type: 'breakdown';
-    icon?: IconPicker;
-    image?: {
-      _type: 'image';
-      asset?: {
-        _ref: string;
-        _type: 'reference';
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-      };
-      crop?: SanityImageCrop;
-      hotspot?: SanityImageHotspot;
-    };
-    text?: string;
-  }>;
-  image: {
-    _type: 'image';
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
-  title?: string;
-};
-
-export type Gallery = {
-  _type: 'gallery';
-  images?: Array<{
-    _key: string;
-    _type: 'image';
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  }>;
-  title?: string;
-};
-
-export type ArticleHighlight = {
-  _type: 'articleHighlight';
-  article: {
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'article';
-  };
-  pretitle?: string;
-};
-
-export type InfoBlock = {
-  _type: 'infoBlock';
-  backgroundColor?: Color;
-  image: {
-    _type: 'image';
-    asset?: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-    };
-    crop?: SanityImageCrop;
-    hotspot?: SanityImageHotspot;
-  };
-  position?: 'left' | 'right';
-  quote?: string;
-  text?: Array<{
-    _key: string;
-    _type: 'block';
-    children?: Array<{
-      _key: string;
-      _type: 'span';
-      marks?: Array<string>;
-      text?: string;
-    }>;
-    level?: number;
-    listItem?: 'bullet' | 'number';
-    markDefs?: Array<{
-      _key: string;
-      _type: 'link';
-      href?: string;
-    }>;
-    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
   }>;
   title?: string;
 };
@@ -279,10 +150,26 @@ export type InfoTiles = {
   title?: string;
 };
 
-export type HeroBannerText = {
-  _type: 'heroBannerText';
-  backgroundColor?: Color;
-  backgroundImage?: {
+export type InfoBreakdown = {
+  _type: 'infoBreakdown';
+  breakdowns?: Array<{
+    _key: string;
+    _type: 'breakdown';
+    icon?: IconPicker;
+    image?: {
+      _type: 'image';
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      };
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+    text?: string;
+  }>;
+  image: {
     _type: 'image';
     asset?: {
       _ref: string;
@@ -293,19 +180,20 @@ export type HeroBannerText = {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
-  gradientColor?: Color;
-  pretitle?: string;
-  pretitleIcon?: IconPicker;
-  subtitle?: string;
-  textHorizontalPosition?: 'left' | 'middle' | 'right';
-  textVerticalPosition?: 'bottom' | 'middle' | 'top';
   title?: string;
 };
 
-export type FullSpanMedia = {
-  _type: 'fullSpanMedia';
-  gradientColor?: Color;
-  image?: {
+export type InfoBlock = {
+  _type: 'infoBlock';
+  backgroundColor?: {
+    _type: 'colorPicker';
+    alpha?: number;
+    hex?: string;
+    hsl?: HslaColor;
+    hsv?: HsvaColor;
+    rgb?: RgbaColor;
+  };
+  image: {
     _type: 'image';
     asset?: {
       _ref: string;
@@ -316,25 +204,47 @@ export type FullSpanMedia = {
     crop?: SanityImageCrop;
     hotspot?: SanityImageHotspot;
   };
-  video?: string;
-};
-
-export type Divider = {
-  _type: 'divider';
-  type?: 'type0' | 'type1' | 'type2' | 'type3' | 'type4';
-};
-
-export type RecentArticles = {
-  _type: 'recentArticles';
-  articles: Array<{
+  position?: 'left' | 'right';
+  quote?: string;
+  text?: Array<{
     _key: string;
-    _ref: string;
-    _type: 'reference';
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: 'article';
+    _type: 'block';
+    children?: Array<{
+      _key: string;
+      _type: 'span';
+      marks?: Array<string>;
+      text?: string;
+    }>;
+    level?: number;
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      _key: string;
+      _type: 'link';
+      href?: string;
+    }>;
+    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
   }>;
   title?: string;
-  type?: 'dark' | 'light';
+};
+
+export type ImageBanner = {
+  _type: 'imageBanner';
+  backgroundImage: {
+    _type: 'image';
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+  buttonLink?: string;
+  buttonText?: string;
+  description?: string;
+  layout?: 'left' | 'right';
+  title?: string;
 };
 
 export type HighlightCard = {
@@ -346,6 +256,43 @@ export type HighlightCard = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: 'article';
   }>;
+};
+
+export type HeroBannerText = {
+  _type: 'heroBannerText';
+  backgroundColor?: {
+    _type: 'colorPicker';
+    alpha?: number;
+    hex?: string;
+    hsl?: HslaColor;
+    hsv?: HsvaColor;
+    rgb?: RgbaColor;
+  };
+  backgroundImage?: {
+    _type: 'image';
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+  gradientColor?: {
+    _type: 'colorPicker';
+    alpha?: number;
+    hex?: string;
+    hsl?: HslaColor;
+    hsv?: HsvaColor;
+    rgb?: RgbaColor;
+  };
+  pretitle?: string;
+  pretitleIcon?: IconPicker;
+  subtitle?: string;
+  textHorizontalPosition?: 'left' | 'middle' | 'right';
+  textVerticalPosition?: 'bottom' | 'middle' | 'top';
+  title?: string;
 };
 
 export type HeroBannerCarousel = {
@@ -385,6 +332,87 @@ export type HeroBannerCarousel = {
   }>;
 };
 
+export type Gallery = {
+  _type: 'gallery';
+  images?: Array<{
+    _key: string;
+    _type: 'image';
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  }>;
+  title?: string;
+};
+
+export type FullSpanMedia = {
+  _type: 'fullSpanMedia';
+  gradientColor?: {
+    _type: 'colorPicker';
+    alpha?: number;
+    hex?: string;
+    hsl?: HslaColor;
+    hsv?: HsvaColor;
+    rgb?: RgbaColor;
+  };
+  image?: {
+    _type: 'image';
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+  video?: string;
+};
+
+export type ExecutiveBoard = {
+  _type: 'executiveBoard';
+  description?: string;
+  members?: Array<{
+    _key: string;
+    _type: 'member';
+    image: {
+      _type: 'image';
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      };
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+    memberID: string;
+    name: string;
+    position: string;
+  }>;
+  title?: string;
+};
+
+export type Divider = {
+  _type: 'divider';
+  type?: 'type0' | 'type1' | 'type2' | 'type3' | 'type4';
+};
+
+export type ArticleHighlight = {
+  _type: 'articleHighlight';
+  article: {
+    _ref: string;
+    _type: 'reference';
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: 'article';
+  };
+  pretitle?: string;
+};
+
 export type PortableText = Array<{
   _key: string;
   _type: 'block';
@@ -404,12 +432,44 @@ export type PortableText = Array<{
   style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
 }>;
 
+export type ColorPicker = Color;
+
 export type Article = {
   _createdAt: string;
   _id: string;
   _rev: string;
   _type: 'article';
   _updatedAt: string;
+  content: Array<{
+    _key: string;
+    _type: 'block';
+    children?: Array<{
+      _key: string;
+      _type: 'span';
+      marks?: Array<string>;
+      text?: string;
+    }>;
+    level?: number;
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      _key: string;
+      _type: 'link';
+      href?: string;
+    }>;
+    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+  } | {
+    _key: string;
+    _type: 'image';
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    caption?: string;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  }>;
   image: {
     _type: 'image';
     asset?: {
@@ -576,11 +636,11 @@ export type HslaColor = {
   s?: number;
 };
 
-export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | Divider | ExecutiveBoard | FullSpanMedia | Gallery | Geopoint | HeroBannerCarousel | HeroBannerText | HighlightCard | HslaColor | HsvaColor | IconPicker | ImageBanner | InfoBlock | InfoBreakdown | InfoTiles | MediaTag | Page | PortableText | ProductHighlight | RecentArticles | RgbaColor | SanityAssetSourceData | SanityFileAsset | SanityImageAsset | SanityImageCrop | SanityImageDimensions | SanityImageHotspot | SanityImageMetadata | SanityImagePalette | SanityImagePaletteSwatch | Slug;
+export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | ColorPicker | Divider | ExecutiveBoard | FullSpanMedia | Gallery | Geopoint | HeroBannerCarousel | HeroBannerText | HighlightCard | HslaColor | HsvaColor | IconPicker | ImageBanner | InfoBlock | InfoBreakdown | InfoTiles | MediaTag | Page | PortableText | ProductHighlight | RecentArticles | RgbaColor | SanityAssetSourceData | SanityFileAsset | SanityImageAsset | SanityImageCrop | SanityImageDimensions | SanityImageHotspot | SanityImageMetadata | SanityImagePalette | SanityImagePaletteSwatch | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: src/sanity/query/sanity.fetcher.ts
 // Variable: pageQuery
-// Query: *[_type == 'page' && url.current == $url][0] {      ...,      components[] {        ...,        _type == 'recentArticles' => {          ...,          articles[]->        }      }    }
+// Query: *[_type == 'page' && url.current == $url][0] {      ...,      components[] {        ...,        _type == 'recentArticles' => {          ...,          articles[]->        },        _type == 'highlightCard' => {          ...,          cards[]->        }      }    }
 export type PageQueryResult = {
   _createdAt: string;
   _id: string;
@@ -627,7 +687,14 @@ export type PageQueryResult = {
   } | {
     _key: string;
     _type: 'fullSpanMedia';
-    gradientColor?: Color;
+    gradientColor?: {
+      _type: 'colorPicker';
+      alpha?: number;
+      hex?: string;
+      hsl?: HslaColor;
+      hsv?: HsvaColor;
+      rgb?: RgbaColor;
+    };
     image?: {
       _type: 'image';
       asset?: {
@@ -695,7 +762,14 @@ export type PageQueryResult = {
   } | {
     _key: string;
     _type: 'heroBannerText';
-    backgroundColor?: Color;
+    backgroundColor?: {
+      _type: 'colorPicker';
+      alpha?: number;
+      hex?: string;
+      hsl?: HslaColor;
+      hsv?: HsvaColor;
+      rgb?: RgbaColor;
+    };
     backgroundImage?: {
       _type: 'image';
       asset?: {
@@ -707,7 +781,14 @@ export type PageQueryResult = {
       crop?: SanityImageCrop;
       hotspot?: SanityImageHotspot;
     };
-    gradientColor?: Color;
+    gradientColor?: {
+      _type: 'colorPicker';
+      alpha?: number;
+      hex?: string;
+      hsl?: HslaColor;
+      hsv?: HsvaColor;
+      rgb?: RgbaColor;
+    };
     pretitle?: string;
     pretitleIcon?: IconPicker;
     subtitle?: string;
@@ -717,13 +798,56 @@ export type PageQueryResult = {
   } | {
     _key: string;
     _type: 'highlightCard';
-    cards?: Array<{
-      _key: string;
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'article';
-    }>;
+    cards: Array<{
+      _createdAt: string;
+      _id: string;
+      _rev: string;
+      _type: 'article';
+      _updatedAt: string;
+      content: Array<{
+        _key: string;
+        _type: 'block';
+        children?: Array<{
+          _key: string;
+          _type: 'span';
+          marks?: Array<string>;
+          text?: string;
+        }>;
+        level?: number;
+        listItem?: 'bullet' | 'number';
+        markDefs?: Array<{
+          _key: string;
+          _type: 'link';
+          href?: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+      } | {
+        _key: string;
+        _type: 'image';
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        caption?: string;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      }>;
+      image: {
+        _type: 'image';
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      };
+      title: string;
+      url: Slug;
+    }> | null;
   } | {
     _key: string;
     _type: 'imageBanner';
@@ -746,7 +870,14 @@ export type PageQueryResult = {
   } | {
     _key: string;
     _type: 'infoBlock';
-    backgroundColor?: Color;
+    backgroundColor?: {
+      _type: 'colorPicker';
+      alpha?: number;
+      hex?: string;
+      hsl?: HslaColor;
+      hsv?: HsvaColor;
+      rgb?: RgbaColor;
+    };
     image: {
       _type: 'image';
       asset?: {
@@ -884,6 +1015,36 @@ export type PageQueryResult = {
       _rev: string;
       _type: 'article';
       _updatedAt: string;
+      content: Array<{
+        _key: string;
+        _type: 'block';
+        children?: Array<{
+          _key: string;
+          _type: 'span';
+          marks?: Array<string>;
+          text?: string;
+        }>;
+        level?: number;
+        listItem?: 'bullet' | 'number';
+        markDefs?: Array<{
+          _key: string;
+          _type: 'link';
+          href?: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+      } | {
+        _key: string;
+        _type: 'image';
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        caption?: string;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      }>;
       image: {
         _type: 'image';
         asset?: {
@@ -906,6 +1067,6 @@ export type PageQueryResult = {
 } | null;
 declare module '@sanity/client' {
   interface SanityQueries {
-    '\n    *[_type == \'page\' && url.current == $url][0] {\n      ...,\n      components[] {\n        ...,\n        _type == \'recentArticles\' => {\n          ...,\n          articles[]->\n        }\n      }\n    }\n  ': PageQueryResult;
+    '\n    *[_type == \'page\' && url.current == $url][0] {\n      ...,\n      components[] {\n        ...,\n        _type == \'recentArticles\' => {\n          ...,\n          articles[]->\n        },\n        _type == \'highlightCard\' => {\n          ...,\n          cards[]->\n        }\n      }\n    }\n  ': PageQueryResult;
   }
 }

@@ -14,9 +14,17 @@ export default async function Page({ params }: PageProps) {
     notFound();
   };
 
-  return page.components?.map((component) => {
-    const Comp = BLOCK_COMPONENTS[component._type];
+  return (
+    <main>
+      { page.components?.map((component) => {
+        const Comp = BLOCK_COMPONENTS[component._type];
 
-    return Comp ? <Comp { ...component } /> : null;
-  });
+        if (Comp) {
+          return <Comp { ...component } />;
+        } else {
+          return null;
+        }
+      }) }
+    </main>
+  );
 }

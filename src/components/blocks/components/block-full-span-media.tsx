@@ -6,12 +6,12 @@ import { sanityImageUrlFor } from '~/sanity/lib/image';
 
 export function BlockFullSpanMedia({ gradientColor, image, video }: PickPageComponent<'fullSpanMedia'>) {
   return (
-    <section className="relative mt-10 h-170 w-full">
+    <section className="relative mt-10 h-180 w-full">
       { image
         ? (
           <Image
             alt="footer"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-center"
             height={ 500 }
             src={ sanityImageUrlFor(image).url() }
             width={ 1000 }

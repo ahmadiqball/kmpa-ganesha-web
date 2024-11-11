@@ -13,12 +13,18 @@ export async function useSanityPage(slug?: string) {
         _type == 'recentArticles' => {
           ...,
           articles[]->
+        },
+        _type == 'highlightCard' => {
+          ...,
+          cards[]->
         }
       }
     }
   `;
 
   return client.fetch<PageQueryResult>(pageQuery, {
-    url: slug,
+    url: slug || '/',
+  }, {
+    cache: 'no-store',
   });
 };
