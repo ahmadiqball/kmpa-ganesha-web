@@ -6,6 +6,8 @@ import { BlockFullSpanMedia } from './components/block-full-span-media';
 import { BlockHeroBannerCarousel } from './components/block-hero-banner-carousel';
 import { BlockHeroBannerText } from './components/block-hero-banner-text';
 import { BlockHighlightCard } from './components/block-highlight-card';
+import { BlockInfoBlock } from './components/block-info-block';
+import { BlockProductHighlight } from './components/block-product-highlight';
 import { BlockRecentArticles } from './components/block-recent-articles';
 
 export type BlockComponents = {
@@ -18,4 +20,6 @@ export const BLOCK_COMPONENTS: BlockComponents = {
   fullSpanMedia: BlockFullSpanMedia,
   recentArticles: BlockRecentArticles,
   highlightCard: BlockHighlightCard,
+  infoBlock: BlockInfoBlock,
+  productHighlight: BlockProductHighlight,
 };

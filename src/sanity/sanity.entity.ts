@@ -290,8 +290,8 @@ export type HeroBannerText = {
   pretitle?: string;
   pretitleIcon?: IconPicker;
   subtitle?: string;
-  textHorizontalPosition?: 'left' | 'middle' | 'right';
-  textVerticalPosition?: 'bottom' | 'middle' | 'top';
+  textHorizontalPosition: 'left' | 'middle' | 'right';
+  textVerticalPosition: 'bottom' | 'middle' | 'top';
   title?: string;
 };
 
@@ -792,8 +792,8 @@ export type PageQueryResult = {
     pretitle?: string;
     pretitleIcon?: IconPicker;
     subtitle?: string;
-    textHorizontalPosition?: 'left' | 'middle' | 'right';
-    textVerticalPosition?: 'bottom' | 'middle' | 'top';
+    textHorizontalPosition: 'left' | 'middle' | 'right';
+    textVerticalPosition: 'bottom' | 'middle' | 'top';
     title?: string;
   } | {
     _key: string;

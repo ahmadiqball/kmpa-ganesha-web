@@ -1,0 +1,5 @@
+.block-hero-banner-text_svg {
+  svg {
+    @apply size-10
+  }
+}

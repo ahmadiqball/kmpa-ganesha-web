@@ -10,7 +10,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 export function BlockRecentArticles({ type, articles, title }: PickPageComponent<'recentArticles'>) {
   return (
-    <section className="pt-14">
+    <section className={ classNames('pt-14', type === 'dark' ? 'bg-[#0A2429]' : 'bg-white') }>
       <Carousel
         opts={{
           loop: true,

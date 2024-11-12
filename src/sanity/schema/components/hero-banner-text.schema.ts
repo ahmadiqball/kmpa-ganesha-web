@@ -17,6 +17,10 @@ export const heroBannerTextSchema = defineType({
     defineField({
       name: 'pretitleIcon',
       type: 'iconPicker',
+      options: {
+        outputFormat: 'react',
+        storeSvg: true,
+      },
     }),
     defineField({
       name: 'subtitle',
@@ -28,6 +32,8 @@ export const heroBannerTextSchema = defineType({
       options: {
         list: ['left', 'middle', 'right'],
       },
+      initialValue: 'middle',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'textVerticalPosition',
@@ -35,6 +41,8 @@ export const heroBannerTextSchema = defineType({
       options: {
         list: ['top', 'middle', 'bottom'],
       },
+      initialValue: 'middle',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'backgroundImage',

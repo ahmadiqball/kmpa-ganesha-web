@@ -23,7 +23,7 @@ export async function useSanityPage(slug?: string) {
   `;
 
   return client.fetch<PageQueryResult>(pageQuery, {
-    url: slug || '/',
+    url: `/${slug || ''}`,
   }, {
     cache: 'no-store',
   });

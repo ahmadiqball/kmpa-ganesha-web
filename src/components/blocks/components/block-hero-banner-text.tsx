@@ -3,7 +3,22 @@ import Image from 'next/image';
 
 import type { PickPageComponent } from '~/sanity/lib/page-component.entity';
 
+import { CoreSanityIcon } from '~/components/core/components/core-sanity-icon';
 import { sanityImageUrlFor } from '~/sanity/lib/image';
+
+import '../styles/block-hero-banner-text.css';
+
+const HORIZONTAL_POSITION = {
+  left: 'items-start',
+  middle: 'items-center',
+  right: 'items-end',
+};
+
+const VERTICAL_POSITION = {
+  top: 'justify-start',
+  middle: 'justify-center',
+  bottom: 'justify-end',
+};
 
 export function BlockHeroBannerText({
   backgroundColor,
@@ -29,13 +44,11 @@ export function BlockHeroBannerText({
           )
         : null }
 
-      <div className={ classNames('relative z-10 mx-auto h-full max-w-280 w-full flex pb-50 text-xl color-white font-light font-poppins', {
-        '': textHorizontalPosition,
-        '': textVerticalPosition,
-      }) }
+      <div className={ classNames('relative z-10 mx-auto h-full max-w-280 w-full flex flex-col pb-50 text-xl color-white font-light font-poppins',
+        HORIZONTAL_POSITION[textHorizontalPosition], VERTICAL_POSITION[textVerticalPosition]) }
       >
-        <div>
-          <figure dangerouslySetInnerHTML={{ __html: pretitleIcon?.svg || '' }} />
+        <div className="flex items-center gap-1">
+          <CoreSanityIcon className="size-6 color-[#D68B30]" svg={ pretitleIcon?.svg || '' } />
 
           <span>{ pretitle }</span>
         </div>
