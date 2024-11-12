@@ -17,6 +17,10 @@ export async function useSanityPage(slug?: string) {
         _type == 'highlightCard' => {
           ...,
           cards[]->
+        },
+        _type == 'articleHighlight' => {
+          ...,
+          article->
         }
       }
     }

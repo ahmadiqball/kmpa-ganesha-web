@@ -32,7 +32,7 @@ export function BlockHeroBannerText({
   title,
 }: PickPageComponent<'heroBannerText'>) {
   return (
-    <section className="relative h-screen min-h-screen w-full" style={{ background: backgroundColor?.hex }}>
+    <section className="relative h-screen min-h-screen w-full py-24" style={{ background: backgroundColor?.hex }}>
       { backgroundImage
         ? (
           <Image
@@ -44,11 +44,11 @@ export function BlockHeroBannerText({
           )
         : null }
 
-      <div className={ classNames('relative z-10 mx-auto h-full max-w-280 w-full flex flex-col pb-50 text-xl color-white font-light font-poppins',
+      <div className={ classNames('relative z-10 mx-auto h-full max-w-280 w-full flex flex-col text-xl color-white font-light font-poppins',
         HORIZONTAL_POSITION[textHorizontalPosition], VERTICAL_POSITION[textVerticalPosition]) }
       >
         <div className="flex items-center gap-1">
-          <CoreSanityIcon className="size-6 color-[#D68B30]" svg={ pretitleIcon?.svg || '' } />
+          <CoreSanityIcon className="size-6 color-[#D68B30]" svg={ pretitleIcon?.svg } />
 
           <span>{ pretitle }</span>
         </div>

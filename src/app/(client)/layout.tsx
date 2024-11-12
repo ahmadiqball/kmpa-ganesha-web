@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <LayoutHeader />
 
-        <main className="mt-16.8 min-h-screen">
+        <main className="min-h-screen">
           { children }
         </main>
 

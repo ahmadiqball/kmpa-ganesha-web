@@ -8,7 +8,7 @@ export function BlockFullSpanMedia({ gradientColor, image, video }: PickPageComp
   const videoId = video?.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/[^\/]+\/|(?:v|e(?:mbed)?)\/))([^"&?\/\s]{11})/)?.[1];
 
   return (
-    <section className="relative h-180 w-full">
+    <section className="relative h-200 w-full">
       { image
         ? (
           <>

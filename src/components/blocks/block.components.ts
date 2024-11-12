@@ -2,6 +2,7 @@ import type React from 'react';
 
 import type { PageComponentTypes, PickPageComponent } from '~/sanity/lib/page-component.entity';
 
+import { BlockArticleHighlight } from './components/block-article-highlight';
 import { BlockFullSpanMedia } from './components/block-full-span-media';
 import { BlockHeroBannerCarousel } from './components/block-hero-banner-carousel';
 import { BlockHeroBannerText } from './components/block-hero-banner-text';
@@ -22,4 +23,5 @@ export const BLOCK_COMPONENTS: BlockComponents = {
   highlightCard: BlockHighlightCard,
   infoBlock: BlockInfoBlock,
   productHighlight: BlockProductHighlight,
+  articleHighlight: BlockArticleHighlight,
 };

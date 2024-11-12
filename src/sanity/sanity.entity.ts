@@ -640,7 +640,7 @@ export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | ColorPic
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: src/sanity/query/sanity.fetcher.ts
 // Variable: pageQuery
-// Query: *[_type == 'page' && url.current == $url][0] {      ...,      components[] {        ...,        _type == 'recentArticles' => {          ...,          articles[]->        },        _type == 'highlightCard' => {          ...,          cards[]->        }      }    }
+// Query: *[_type == 'page' && url.current == $url][0] {      ...,      components[] {        ...,        _type == 'recentArticles' => {          ...,          articles[]->        },        _type == 'highlightCard' => {          ...,          cards[]->        },        _type == 'articleHighlight' => {          ...,          article->        }      }    }
 export type PageQueryResult = {
   _createdAt: string;
   _id: string;
@@ -651,10 +651,54 @@ export type PageQueryResult = {
     _key: string;
     _type: 'articleHighlight';
     article: {
-      _ref: string;
-      _type: 'reference';
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: 'article';
+      _createdAt: string;
+      _id: string;
+      _rev: string;
+      _type: 'article';
+      _updatedAt: string;
+      content: Array<{
+        _key: string;
+        _type: 'block';
+        children?: Array<{
+          _key: string;
+          _type: 'span';
+          marks?: Array<string>;
+          text?: string;
+        }>;
+        level?: number;
+        listItem?: 'bullet' | 'number';
+        markDefs?: Array<{
+          _key: string;
+          _type: 'link';
+          href?: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+      } | {
+        _key: string;
+        _type: 'image';
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        caption?: string;
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      }>;
+      image: {
+        _type: 'image';
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        crop?: SanityImageCrop;
+        hotspot?: SanityImageHotspot;
+      };
+      title: string;
+      url: Slug;
     };
     pretitle?: string;
   } | {
@@ -1067,6 +1111,6 @@ export type PageQueryResult = {
 } | null;
 declare module '@sanity/client' {
   interface SanityQueries {
-    '\n    *[_type == \'page\' && url.current == $url][0] {\n      ...,\n      components[] {\n        ...,\n        _type == \'recentArticles\' => {\n          ...,\n          articles[]->\n        },\n        _type == \'highlightCard\' => {\n          ...,\n          cards[]->\n        }\n      }\n    }\n  ': PageQueryResult;
+    '\n    *[_type == \'page\' && url.current == $url][0] {\n      ...,\n      components[] {\n        ...,\n        _type == \'recentArticles\' => {\n          ...,\n          articles[]->\n        },\n        _type == \'highlightCard\' => {\n          ...,\n          cards[]->\n        },\n        _type == \'articleHighlight\' => {\n          ...,\n          article->\n        }\n      }\n    }\n  ': PageQueryResult;
   }
 }
