@@ -9,7 +9,7 @@ import { sanityImageUrlFor } from '~/sanity/lib/image';
 export function BlockInfoBlock({ image, backgroundColor, position, quote, text, title }: PickPageComponent<'infoBlock'>) {
   return (
     <section
-      className="py-12"
+      className="py-24"
       style={{ backgroundColor: backgroundColor?.hex }}
     >
       <div
