@@ -1,6 +1,24 @@
 import { kebabCase } from 'lodash';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
+const PAGE_COMPONENT_TYPES = [
+  'articleHighlight',
+  'divider',
+  'executiveBoard',
+  'fullSpanMedia',
+  'gallery',
+  'heroBannerCarousel',
+  'heroBannerText',
+  'highlightCard',
+  'imageBanner',
+  'infoBlock',
+  'infoBreakdown',
+  'infoTiles',
+  'pageHighlight',
+  'productHighlight',
+  'recentArticles',
+];
+
 export const pageSchema = defineType({
   name: 'page',
   type: 'document',
@@ -24,50 +42,7 @@ export const pageSchema = defineType({
     defineField({
       name: 'components',
       type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'articleHighlight',
-        }),
-        defineArrayMember({
-          type: 'divider',
-        }),
-        defineArrayMember({
-          type: 'executiveBoard',
-        }),
-        defineArrayMember({
-          type: 'fullSpanMedia',
-        }),
-        defineArrayMember({
-          type: 'gallery',
-        }),
-        defineArrayMember({
-          type: 'heroBannerCarousel',
-        }),
-        defineArrayMember({
-          type: 'heroBannerText',
-        }),
-        defineArrayMember({
-          type: 'highlightCard',
-        }),
-        defineArrayMember({
-          type: 'imageBanner',
-        }),
-        defineArrayMember({
-          type: 'infoBlock',
-        }),
-        defineArrayMember({
-          type: 'infoBreakdown',
-        }),
-        defineArrayMember({
-          type: 'infoTiles',
-        }),
-        defineArrayMember({
-          type: 'productHighlight',
-        }),
-        defineArrayMember({
-          type: 'recentArticles',
-        }),
-      ],
+      of: PAGE_COMPONENT_TYPES.map((type) => defineArrayMember({ type })),
     }),
   ],
 });

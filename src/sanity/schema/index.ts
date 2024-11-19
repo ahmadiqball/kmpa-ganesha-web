@@ -13,6 +13,7 @@ import { imageBannerSchema } from './components/image-banner.schema';
 import { infoBlockSchema } from './components/info-block.schema';
 import { infoBreakdownSchema } from './components/info-breakdown.schema';
 import { infoTilesSchema } from './components/info-tiles.schema';
+import { pageHighlightSchema } from './components/page-highlight.schema';
 import { productHighlightSchema } from './components/product-highlight.schema';
 import { recentArticlesSchema } from './components/recent-articles.schema';
 import { colorPickerSchema } from './fields/color-picker.schema';
@@ -39,6 +40,7 @@ export const schema: { types: Array<SchemaTypeDefinition> } = {
     infoBlockSchema,
     infoBreakdownSchema,
     infoTilesSchema,
+    pageHighlightSchema,
     productHighlightSchema,
     recentArticlesSchema,
   ],

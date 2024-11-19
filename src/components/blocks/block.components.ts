@@ -12,6 +12,7 @@ import { BlockImageBanner } from './components/block-image-banner';
 import { BlockInfoBlock } from './components/block-info-block';
 import { BlockInfoBreakdown } from './components/block-info-breakdown';
 import { BlockInfoTiles } from './components/block-info-tiles';
+import { BlockPageHighlight } from './components/block-page-highlight';
 import { BlockProductHighlight } from './components/block-product-highlight';
 import { BlockRecentArticles } from './components/block-recent-articles';
 
@@ -32,4 +33,5 @@ export const BLOCK_COMPONENTS: BlockComponents = {
   infoBreakdown: BlockInfoBreakdown,
   executiveBoard: BlockExecutiveBoard,
   imageBanner: BlockImageBanner,
+  pageHighlight: BlockPageHighlight,
 };

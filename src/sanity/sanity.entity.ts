@@ -117,6 +117,27 @@ export type ProductHighlight = {
   title?: string;
 };
 
+export type PageHighlight = {
+  _type: 'pageHighlight';
+  description: string;
+  image: {
+    _type: 'image';
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
+  layout: 'left' | 'right';
+  pretitle: string;
+  title: string;
+  type: 'dark' | 'light';
+  url: string;
+};
+
 export type InfoTiles = {
   _type: 'infoTiles';
   backgroundImage?: {
@@ -517,6 +538,8 @@ export type Page = {
     _key: string;
   } & InfoTiles | {
     _key: string;
+  } & PageHighlight | {
+    _key: string;
   } & ProductHighlight | {
     _key: string;
   } & RecentArticles>;
@@ -636,7 +659,7 @@ export type HslaColor = {
   s?: number;
 };
 
-export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | ColorPicker | Divider | ExecutiveBoard | FullSpanMedia | Gallery | Geopoint | HeroBannerCarousel | HeroBannerText | HighlightCard | HslaColor | HsvaColor | IconPicker | ImageBanner | InfoBlock | InfoBreakdown | InfoTiles | MediaTag | Page | PortableText | ProductHighlight | RecentArticles | RgbaColor | SanityAssetSourceData | SanityFileAsset | SanityImageAsset | SanityImageCrop | SanityImageDimensions | SanityImageHotspot | SanityImageMetadata | SanityImagePalette | SanityImagePaletteSwatch | Slug;
+export type AllSanitySchemaTypes = Article | ArticleHighlight | Color | ColorPicker | Divider | ExecutiveBoard | FullSpanMedia | Gallery | Geopoint | HeroBannerCarousel | HeroBannerText | HighlightCard | HslaColor | HsvaColor | IconPicker | ImageBanner | InfoBlock | InfoBreakdown | InfoTiles | MediaTag | Page | PageHighlight | PortableText | ProductHighlight | RecentArticles | RgbaColor | SanityAssetSourceData | SanityFileAsset | SanityImageAsset | SanityImageCrop | SanityImageDimensions | SanityImageHotspot | SanityImageMetadata | SanityImagePalette | SanityImagePaletteSwatch | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: src/sanity/query/sanity.fetcher.ts
 // Variable: pageQuery
@@ -1018,6 +1041,26 @@ export type PageQueryResult = {
       text?: string;
     }>;
     title?: string;
+  } | {
+    _key: string;
+    _type: 'pageHighlight';
+    description: string;
+    image: {
+      _type: 'image';
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      };
+      crop?: SanityImageCrop;
+      hotspot?: SanityImageHotspot;
+    };
+    layout: 'left' | 'right';
+    pretitle: string;
+    title: string;
+    type: 'dark' | 'light';
+    url: string;
   } | {
     _key: string;
     _type: 'productHighlight';
