@@ -3,6 +3,7 @@ import type React from 'react';
 import type { PageComponentTypes, PickPageComponent } from '~/sanity/lib/page-component.entity';
 
 import { BlockArticleHighlight } from './components/block-article-highlight';
+import { BlockDivider } from './components/block-divider';
 import { BlockExecutiveBoard } from './components/block-executive-board';
 import { BlockFullSpanMedia } from './components/block-full-span-media';
 import { BlockHeroBannerCarousel } from './components/block-hero-banner-carousel';
@@ -34,4 +35,5 @@ export const BLOCK_COMPONENTS: BlockComponents = {
   executiveBoard: BlockExecutiveBoard,
   imageBanner: BlockImageBanner,
   pageHighlight: BlockPageHighlight,
+  divider: BlockDivider,
 };

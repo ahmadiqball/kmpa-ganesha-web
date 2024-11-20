@@ -89,7 +89,7 @@ export function BlockHeroBannerCarousel({ carousel }: PickPageComponent<'heroBan
         </div>
       </div>
 
-      <div className="relative flex justify-center gap-22 bg-[#0A2429] pb-50 pt-25.5 color-white">
+      <div className="relative flex justify-center gap-22 bg-[#0A2429] py-25 color-white">
         <div className="flex flex-col items-end text-end">
           <h2 className="max-w-72 text-5xl font-medium font-poppins">{ activeCarousel.summaryTitle }</h2>
 

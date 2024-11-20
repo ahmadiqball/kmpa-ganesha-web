@@ -420,7 +420,16 @@ export type ExecutiveBoard = {
 
 export type Divider = {
   _type: 'divider';
-  type?: 'type0' | 'type1' | 'type2' | 'type3' | 'type4';
+  baseColor?: {
+    _type: 'colorPicker';
+    alpha?: number;
+    hex?: string;
+    hsl?: HslaColor;
+    hsv?: HsvaColor;
+    rgb?: RgbaColor;
+  };
+  orientation?: 'bottom' | 'top';
+  type: 'type1' | 'type2';
 };
 
 export type ArticleHighlight = {
@@ -727,7 +736,16 @@ export type PageQueryResult = {
   } | {
     _key: string;
     _type: 'divider';
-    type?: 'type0' | 'type1' | 'type2' | 'type3' | 'type4';
+    baseColor?: {
+      _type: 'colorPicker';
+      alpha?: number;
+      hex?: string;
+      hsl?: HslaColor;
+      hsv?: HsvaColor;
+      rgb?: RgbaColor;
+    };
+    orientation?: 'bottom' | 'top';
+    type: 'type1' | 'type2';
   } | {
     _key: string;
     _type: 'executiveBoard';
