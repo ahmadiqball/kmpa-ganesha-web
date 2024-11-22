@@ -4,8 +4,16 @@ import { BLOCK_COMPONENTS } from '~/components/blocks/block.components';
 import { useSanityPage } from '~/sanity/query/sanity.fetcher';
 
 interface PageProps {
-  params: { slug?: string };
+  params: { slug?: Array<string> };
 };
+
+export async function generateMetadata({ params }: PageProps) {
+  const page = await useSanityPage(params.slug);
+
+  return {
+    title: page?.title,
+  };
+}
 
 export default async function Page({ params }: PageProps) {
   const page = await useSanityPage(params.slug);
