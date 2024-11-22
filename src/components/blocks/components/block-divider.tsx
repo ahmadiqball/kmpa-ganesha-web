@@ -9,17 +9,22 @@ const DIVIDER_MAP = {
   type2: Divider2,
 };
 
-export function BlockDivider({ type, baseColor, orientation }: PickPageComponent<'divider'>) {
+export function BlockDivider({ type, baseColor, orientation, mergeComponent }: PickPageComponent<'divider'>) {
   const Divider = DIVIDER_MAP[type];
 
   return (
     <section
-      className={ classNames('w-full h-fit', orientation === 'top' ? '-scale-y-100 -mt-[1px]' : '-mb-[1px]') }
+      className={ classNames('w-full h-fit relative z-10',
+        orientation === 'top' ? '-scale-y-100 -mt-[1px]' : '-mb-[1px]', {
+          '-mb-25': orientation === 'top' && mergeComponent,
+          '-mt-25': orientation === 'bottom' && mergeComponent,
+        },
+      ) }
 
     >
       <Divider
         className="h-25 w-full"
-        style={{ color: baseColor?.hex || '#FFFFFF' }}
+        style={{ color: baseColor.hex }}
       />
     </section>
   );
@@ -75,13 +80,13 @@ function Divider2(props: HTMLProps<SVGSVGElement>) {
       <path
         d="M0 15.5349C14.5522 7.49424 21.0755 4.00466 36.1295 4.00466C52.6888 6.10106 83.8556 17.5873 99.3561 15.5349C114.856 13.4825 135.486 5.8036 150.54 2.25323C166.095 -1.41548 175.622 -0.443914 191.122 4.00466C206.623 8.45323 222.289 11.7802 237.789 11.3421C252.843 11.3421 263.5 9.58323 279 8.83062V37C263.5 37 248 37 232.5 37C217 37 201.5 37 186 37C170.5 37 155 37 139.5 37C124 37 108.5 37 93.0003 37C77.4998 37 62.0002 37 46.4997 37C31.0001 37 15.4996 37 0 37V15.5349Z"
         fill="currentColor"
-        fill-opacity="0.19"
+        fill-opacity="0.3"
       />
 
       <path
         d="M0 19.933C15.4995 21.1568 31.0001 22.3805 46.4996 19.933C62.0001 17.4845 77.4997 11.3637 93.0002 10.451C108.5 9.53836 124.001 13.8327 139.5 14.244C155 14.6543 170.5 11.1816 186 8.55506C201.5 5.92748 214.762 5.27466 230.262 6.83811C245.762 8.40053 263.5 15.0258 279 19.933V37C263.5 37 248 37 232.5 37C217 37 201.5 37 186 37C170.5 37 155 37 139.5 37C124.001 37 108.5 37 93.0002 37C77.4997 37 62.0001 37 46.4996 37C31.0001 37 15.4995 37 0 37V19.933Z"
         fill="currentColor"
-        fill-opacity="0.19"
+        fill-opacity="0.5"
       />
 
       <path

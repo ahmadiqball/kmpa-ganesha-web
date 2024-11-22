@@ -15,15 +15,22 @@ export const dividerSchema = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'mergeComponent',
+      type: 'boolean',
+    }),
+    defineField({
       name: 'orientation',
       type: 'string',
       options: {
         list: ['top', 'bottom'],
       },
+      initialValue: 'top',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'baseColor',
       type: 'colorPicker',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 });

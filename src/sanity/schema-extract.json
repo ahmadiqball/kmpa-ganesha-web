@@ -2536,6 +2536,13 @@
           },
           "optional": false
         },
+        "mergeComponent": {
+          "type": "objectAttribute",
+          "value": {
+            "type": "boolean"
+          },
+          "optional": true
+        },
         "orientation": {
           "type": "objectAttribute",
           "value": {
@@ -2551,7 +2558,7 @@
               }
             ]
           },
-          "optional": true
+          "optional": false
         },
         "baseColor": {
           "type": "objectAttribute",
@@ -2605,7 +2612,7 @@
               }
             }
           },
-          "optional": true
+          "optional": false
         }
       }
     }

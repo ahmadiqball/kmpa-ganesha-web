@@ -420,7 +420,7 @@ export type ExecutiveBoard = {
 
 export type Divider = {
   _type: 'divider';
-  baseColor?: {
+  baseColor: {
     _type: 'colorPicker';
     alpha?: number;
     hex?: string;
@@ -428,7 +428,8 @@ export type Divider = {
     hsv?: HsvaColor;
     rgb?: RgbaColor;
   };
-  orientation?: 'bottom' | 'top';
+  mergeComponent?: boolean;
+  orientation: 'bottom' | 'top';
   type: 'type1' | 'type2';
 };
 
@@ -736,7 +737,7 @@ export type PageQueryResult = {
   } | {
     _key: string;
     _type: 'divider';
-    baseColor?: {
+    baseColor: {
       _type: 'colorPicker';
       alpha?: number;
       hex?: string;
@@ -744,7 +745,8 @@ export type PageQueryResult = {
       hsv?: HsvaColor;
       rgb?: RgbaColor;
     };
-    orientation?: 'bottom' | 'top';
+    mergeComponent?: boolean;
+    orientation: 'bottom' | 'top';
     type: 'type1' | 'type2';
   } | {
     _key: string;
