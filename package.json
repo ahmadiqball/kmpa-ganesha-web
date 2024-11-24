@@ -42,7 +42,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@unocss/postcss": "^0.64.1",
-    "@unocss/webpack": "^0.58.9",
     "@vinicunca/eslint-config": "^2.5.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",

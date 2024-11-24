@@ -87,9 +87,6 @@ importers:
       '@unocss/postcss':
         specifier: ^0.64.1
         version: 0.64.1(postcss@8.4.38)
-      '@unocss/webpack':
-        specifier: ^0.58.9
-        version: 0.58.9(rollup@4.18.0)(webpack@5.94.0(esbuild@0.21.5))
       '@vinicunca/eslint-config':
         specifier: ^2.5.0
         version: 2.5.0(@vue/compiler-sfc@3.4.27)(eslint@8.57.0)(typescript@5.4.5)
@@ -8457,6 +8454,7 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+    optional: true
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
@@ -9798,6 +9796,7 @@ snapshots:
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - rollup
+    optional: true
 
   '@vercel/stega@0.1.2': {}
 
@@ -9891,20 +9890,26 @@ snapshots:
     dependencies:
       '@webassemblyjs/helper-numbers': 1.11.6
       '@webassemblyjs/helper-wasm-bytecode': 1.11.6
+    optional: true
 
-  '@webassemblyjs/floating-point-hex-parser@1.11.6': {}
+  '@webassemblyjs/floating-point-hex-parser@1.11.6':
+    optional: true
 
-  '@webassemblyjs/helper-api-error@1.11.6': {}
+  '@webassemblyjs/helper-api-error@1.11.6':
+    optional: true
 
-  '@webassemblyjs/helper-buffer@1.12.1': {}
+  '@webassemblyjs/helper-buffer@1.12.1':
+    optional: true
 
   '@webassemblyjs/helper-numbers@1.11.6':
     dependencies:
       '@webassemblyjs/floating-point-hex-parser': 1.11.6
       '@webassemblyjs/helper-api-error': 1.11.6
       '@xtuc/long': 4.2.2
+    optional: true
 
-  '@webassemblyjs/helper-wasm-bytecode@1.11.6': {}
+  '@webassemblyjs/helper-wasm-bytecode@1.11.6':
+    optional: true
 
   '@webassemblyjs/helper-wasm-section@1.12.1':
     dependencies:
@@ -9912,16 +9917,20 @@ snapshots:
       '@webassemblyjs/helper-buffer': 1.12.1
       '@webassemblyjs/helper-wasm-bytecode': 1.11.6
       '@webassemblyjs/wasm-gen': 1.12.1
+    optional: true
 
   '@webassemblyjs/ieee754@1.11.6':
     dependencies:
       '@xtuc/ieee754': 1.2.0
+    optional: true
 
   '@webassemblyjs/leb128@1.11.6':
     dependencies:
       '@xtuc/long': 4.2.2
+    optional: true
 
-  '@webassemblyjs/utf8@1.11.6': {}
+  '@webassemblyjs/utf8@1.11.6':
+    optional: true
 
   '@webassemblyjs/wasm-edit@1.12.1':
     dependencies:
@@ -9933,6 +9942,7 @@ snapshots:
       '@webassemblyjs/wasm-opt': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
       '@webassemblyjs/wast-printer': 1.12.1
+    optional: true
 
   '@webassemblyjs/wasm-gen@1.12.1':
     dependencies:
@@ -9941,6 +9951,7 @@ snapshots:
       '@webassemblyjs/ieee754': 1.11.6
       '@webassemblyjs/leb128': 1.11.6
       '@webassemblyjs/utf8': 1.11.6
+    optional: true
 
   '@webassemblyjs/wasm-opt@1.12.1':
     dependencies:
@@ -9948,6 +9959,7 @@ snapshots:
       '@webassemblyjs/helper-buffer': 1.12.1
       '@webassemblyjs/wasm-gen': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
+    optional: true
 
   '@webassemblyjs/wasm-parser@1.12.1':
     dependencies:
@@ -9957,15 +9969,19 @@ snapshots:
       '@webassemblyjs/ieee754': 1.11.6
       '@webassemblyjs/leb128': 1.11.6
       '@webassemblyjs/utf8': 1.11.6
+    optional: true
 
   '@webassemblyjs/wast-printer@1.12.1':
     dependencies:
       '@webassemblyjs/ast': 1.12.1
       '@xtuc/long': 4.2.2
+    optional: true
 
-  '@xtuc/ieee754@1.2.0': {}
+  '@xtuc/ieee754@1.2.0':
+    optional: true
 
-  '@xtuc/long@4.2.2': {}
+  '@xtuc/long@4.2.2':
+    optional: true
 
   JSONStream@1.3.5:
     dependencies:
@@ -9979,6 +9995,7 @@ snapshots:
   acorn-import-attributes@1.9.5(acorn@8.14.0):
     dependencies:
       acorn: 8.14.0
+    optional: true
 
   acorn-jsx@5.3.2(acorn@8.11.3):
     dependencies:
@@ -9986,7 +10003,8 @@ snapshots:
 
   acorn@8.11.3: {}
 
-  acorn@8.14.0: {}
+  acorn@8.14.0:
+    optional: true
 
   agent-base@7.1.1:
     dependencies:
@@ -9997,6 +10015,7 @@ snapshots:
   ajv-keywords@3.5.2(ajv@6.12.6):
     dependencies:
       ajv: 6.12.6
+    optional: true
 
   ajv@6.12.6:
     dependencies:
@@ -10351,7 +10370,8 @@ snapshots:
 
   chownr@3.0.0: {}
 
-  chrome-trace-event@1.0.4: {}
+  chrome-trace-event@1.0.4:
+    optional: true
 
   ci-info@4.0.0: {}
 
@@ -10848,6 +10868,7 @@ snapshots:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.2.1
+    optional: true
 
   entities@4.5.0: {}
 
@@ -10929,7 +10950,8 @@ snapshots:
       iterator.prototype: 1.1.2
       safe-array-concat: 1.1.2
 
-  es-module-lexer@1.5.4: {}
+  es-module-lexer@1.5.4:
+    optional: true
 
   es-object-atoms@1.0.0:
     dependencies:
@@ -11061,8 +11083,8 @@ snapshots:
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-react: 7.34.1(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
@@ -11090,13 +11112,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 4.3.4
       enhanced-resolve: 5.16.1
       eslint: 8.57.0
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.5
       is-core-module: 2.13.1
@@ -11111,14 +11133,14 @@ snapshots:
     dependencies:
       eslint: 8.57.0
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -11175,7 +11197,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -11185,7 +11207,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.2.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.10.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -11196,7 +11218,7 @@ snapshots:
       semver: 6.3.1
       tsconfig-paths: 3.15.0
     optionalDependencies:
-      '@typescript-eslint/parser': 7.10.0(eslint@8.57.0)(typescript@5.4.5)
+      '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -11395,6 +11417,7 @@ snapshots:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 4.3.0
+    optional: true
 
   eslint-scope@7.2.2:
     dependencies:
@@ -11474,7 +11497,8 @@ snapshots:
     dependencies:
       estraverse: 5.3.0
 
-  estraverse@4.3.0: {}
+  estraverse@4.3.0:
+    optional: true
 
   estraverse@5.3.0: {}
 
@@ -11774,7 +11798,8 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  glob-to-regexp@0.4.1: {}
+  glob-to-regexp@0.4.1:
+    optional: true
 
   glob@10.3.10:
     dependencies:
@@ -12198,6 +12223,7 @@ snapshots:
       '@types/node': 20.12.12
       merge-stream: 2.0.0
       supports-color: 8.1.1
+    optional: true
 
   jiti@1.21.0: {}
 
@@ -12354,7 +12380,8 @@ snapshots:
 
   load-tsconfig@0.2.5: {}
 
-  loader-runner@4.3.0: {}
+  loader-runner@4.3.0:
+    optional: true
 
   local-pkg@0.5.0:
     dependencies:
@@ -12622,7 +12649,8 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  neo-async@2.6.2: {}
+  neo-async@2.6.2:
+    optional: true
 
   next-sanity@9.5.0(@sanity/client@6.22.1)(@sanity/icons@3.4.0(react@18.3.1))(@sanity/types@3.59.1)(@sanity/ui@2.8.9(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(next@14.2.3(@babel/core@7.25.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.59.1(@types/node@20.12.12)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.32.0))(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
@@ -13087,6 +13115,7 @@ snapshots:
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
+    optional: true
 
   react-clientside-effect@1.2.6(react@18.3.1):
     dependencies:
@@ -13705,6 +13734,7 @@ snapshots:
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
+    optional: true
 
   scroll-into-view-if-needed@3.1.0:
     dependencies:
@@ -13723,6 +13753,7 @@ snapshots:
   serialize-javascript@6.0.2:
     dependencies:
       randombytes: 2.1.0
+    optional: true
 
   set-function-length@1.2.2:
     dependencies:
@@ -14004,6 +14035,7 @@ snapshots:
   supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
+    optional: true
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
@@ -14074,6 +14106,7 @@ snapshots:
       webpack: 5.94.0(esbuild@0.21.5)
     optionalDependencies:
       esbuild: 0.21.5
+    optional: true
 
   terser@5.32.0:
     dependencies:
@@ -14081,6 +14114,7 @@ snapshots:
       acorn: 8.14.0
       commander: 2.20.3
       source-map-support: 0.5.21
+    optional: true
 
   text-decoder@1.2.0:
     dependencies:
@@ -14329,6 +14363,7 @@ snapshots:
     dependencies:
       acorn: 8.14.0
       webpack-virtual-modules: 0.6.2
+    optional: true
 
   update-browserslist-db@1.0.16(browserslist@4.23.0):
     dependencies:
@@ -14440,6 +14475,7 @@ snapshots:
     dependencies:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
+    optional: true
 
   wcwidth@1.0.1:
     dependencies:
@@ -14447,9 +14483,11 @@ snapshots:
 
   webidl-conversions@7.0.0: {}
 
-  webpack-sources@3.2.3: {}
+  webpack-sources@3.2.3:
+    optional: true
 
-  webpack-virtual-modules@0.6.2: {}
+  webpack-virtual-modules@0.6.2:
+    optional: true
 
   webpack@5.94.0(esbuild@0.21.5):
     dependencies:
@@ -14480,6 +14518,7 @@ snapshots:
       - '@swc/core'
       - esbuild
       - uglify-js
+    optional: true
 
   whatwg-encoding@3.1.1:
     dependencies:
