@@ -9,26 +9,26 @@ import { sanityImageUrlFor } from '~/sanity/lib/image';
 
 export function BlockArticleHighlight({ article, pretitle }: PickPageComponent<'articleHighlight'>) {
   return (
-    <section className="mx-auto my-24 max-w-300 flex items-center gap-16">
+    <section className="mx-auto my-8 max-w-300 flex flex-col items-center gap-4 px-4 md:my-24 md:flex-row md:gap-16">
       <Image
         alt={ article.title }
-        className="max-w-1/2 w-1/2 rounded-xl"
-        height={ 600 }
+        className="max-h-80 max-w-100 w-full rounded-xl md:max-h-none md:max-w-1/2 md:w-1/2"
+        height={ 1000 }
         src={ sanityImageUrlFor(article.image).url() }
-        width={ 600 }
+        width={ 1000 }
       />
 
-      <div className="max-w-1/2 w-1/2">
-        <p className="text-xl font-medium">{ pretitle }</p>
+      <div className="w-full md:max-w-1/2 md:w-1/2">
+        <p className="text-base font-medium md:text-xl">{ pretitle }</p>
 
-        <h5 className="mt-2 text-3xl font-bold">{ article.title }</h5>
+        <h5 className="mt-2 text-xl font-bold md:text-3xl">{ article.title }</h5>
 
-        <div className="mt-6">
+        <div className="line-clamp-6 mt-2 text-xs md:mt-6 md:text-base">
           <PortableText value={ article.content.slice(0, 2) } />
         </div>
 
-        <Link href={ article.url.current }>
-          <FaArrowRightLong className="mt-6 size-8 color-[#0A2429]" />
+        <Link className="inline-block w-fit" href={ article.url.current }>
+          <FaArrowRightLong className="mt-2 size-6 color-[#0A2429] md:mt-6 md:size-8" />
         </Link>
       </div>
     </section>
