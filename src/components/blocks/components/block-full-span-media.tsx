@@ -8,13 +8,13 @@ export function BlockFullSpanMedia({ gradientColor, image, video }: PickPageComp
   const videoId = video?.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/[^\/]+\/|(?:v|e(?:mbed)?)\/))([^"&?\/\s]{11})/)?.[1];
 
   return (
-    <section className="relative h-200 w-full">
+    <section className="relative h-fit w-full">
       { image
         ? (
           <>
             <Image
               alt="footer"
-              className="h-full w-full object-cover object-center"
+              className="h-50vh w-full object-cover object-center md:h-100vh"
               height={ 500 }
               src={ sanityImageUrlFor(image).url() }
               width={ 1000 }
@@ -30,7 +30,7 @@ export function BlockFullSpanMedia({ gradientColor, image, video }: PickPageComp
 
       { video
         ? (
-          <iframe className="h-full w-full" src={ `https://www.youtube.com/embed/${videoId}` } />
+          <iframe className="aspect-video w-full" src={ `https://www.youtube.com/embed/${videoId}` } />
           )
         : null }
 

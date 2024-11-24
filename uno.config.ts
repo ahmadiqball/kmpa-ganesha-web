@@ -2,6 +2,7 @@ import {
   defineConfig,
   presetIcons,
   presetUno,
+  transformerDirectives,
 } from 'unocss';
 
 export default defineConfig({
@@ -24,4 +25,8 @@ export default defineConfig({
       poppins: 'Poppins',
     },
   },
+
+  transformers: [
+    transformerDirectives(),
+  ],
 });

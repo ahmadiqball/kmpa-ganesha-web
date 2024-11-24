@@ -19,6 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="/uno.css" rel="stylesheet" />
+      </head>
+
       <body>
         <LayoutHeader />
 

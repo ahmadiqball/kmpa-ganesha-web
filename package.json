@@ -41,7 +41,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@unocss/webpack": "^0.62.3",
+    "@unocss/postcss": "^0.64.1",
+    "@unocss/webpack": "^0.58.9",
     "@vinicunca/eslint-config": "^2.5.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",
@@ -49,7 +50,7 @@
     "lint-staged": "^15.2.4",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5",
-    "unocss": "^0.60.3"
+    "unocss": "^0.58.9"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",

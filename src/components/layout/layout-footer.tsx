@@ -3,28 +3,34 @@ import Image from 'next/image';
 export function LayoutFooter() {
   return (
     <footer className="bg-[#0A2429]">
-      <div className="py-13 max-w-6xl mx-auto flex justify-between items-center">
-        <figure className="flex items-center gap-3 color-white">
-          <Image alt="logo" height={ 140 } src="/assets/images/logo-white.png" width={ 140 } />
+      <div className="mx-auto max-w-300 flex flex-col flex-wrap justify-between gap-8 px-4 py-13 md:flex-row md:gap-20">
+        <figure className="min-w-fit flex items-center gap-3 color-white">
+          <Image alt="logo" className="w-20 md:w-35" height={ 140 } src="/assets/images/logo-white.png" width={ 140 } />
 
-          <h3 className="text-4xl w-40 font-florest">KMPA Ganesha ITB</h3>
+          <h3 className="max-w-40 text-2xl font-florest md:text-4xl">KMPA Ganesha ITB</h3>
         </figure>
 
-        <p className="color-white w-89">
+        <p className="w-max text-sm color-white md:text-base">
           Contact Person: 0812-1677-7593 (Kevin)
+          <br />
           e-mail: kmpaganesha@km.itb.ac.id
+
           <br />
 
           <br />
           ITB Ganesha, Sunken Court, Jl. Ganesa No.10,
+
+          <br />
           Lb. Siliwangi, Kecamatan Coblong,
+
+          <br />
           Kota Bandung, Jawa Barat 40132
         </p>
 
-        <div className="color-white">
-          <h6 className="text-xl font-bold text-center">CONNECT WITH US</h6>
+        <div className="min-w-min color-white">
+          <h6 className="text-xl font-bold">CONNECT WITH US</h6>
 
-          <div className="flex gap-5 items-center mt-4">
+          <div className="mt-4 flex items-center gap-5">
             <i className="i-kmpa-linkedin text-3xl" />
 
             <i className="i-kmpa-spotify text-4xl" />

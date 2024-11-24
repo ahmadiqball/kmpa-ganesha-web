@@ -23,7 +23,7 @@ export function BlockDivider({ type, baseColor, orientation, mergeComponent }: P
 
     >
       <Divider
-        className="h-25 w-full"
+        className="h-10 w-full md:h-25"
         style={{ color: baseColor.hex }}
       />
     </section>
