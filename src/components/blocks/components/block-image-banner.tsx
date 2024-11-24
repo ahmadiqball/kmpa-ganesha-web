@@ -11,13 +11,13 @@ export function BlockImageBanner({ backgroundImage, buttonLink, buttonText, desc
       className="bg-cover bg-center"
       style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${sanityImageUrlFor(backgroundImage).url()})` }}
     >
-      <div className={ classNames('h-140 flex flex-col justify-center max-w-300 mx-auto', layout === 'left' ? 'item-start' : 'items-end text-right') }>
-        <h4 className="max-w-1/3 text-6xl color-white font-semibold">{ title }</h4>
+      <div className={ classNames('py-40 flex flex-col justify-center max-w-300 px-4 mx-auto', layout === 'left' ? 'item-start' : 'items-end text-right') }>
+        <h4 className="text-3xl color-white font-semibold xl:max-w-1/3 md:text-6xl">{ title }</h4>
 
-        <p className="mt-4 max-w-2/5 color-white">{ description }</p>
+        <p className="mt-2 text-xs color-white md:mt-4 md:max-w-1/2 sm:max-w-4/5 xl:max-w-2/5 md:text-base">{ description }</p>
 
         <Link
-          className="mt-6 w-fit rounded-full bg-[#D68B30] px-8 py-2 color-white font-semibold"
+          className="mt-4 w-fit rounded-full bg-[#D68B30] px-8 py-2 text-xs color-white font-semibold md:mt-6 md:text-base"
           href={ buttonLink || '' }
         >
           { buttonText }

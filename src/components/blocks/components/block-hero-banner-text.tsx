@@ -10,8 +10,8 @@ import '../styles/block-hero-banner-text.css';
 
 const HORIZONTAL_POSITION = {
   left: 'items-start',
-  middle: 'items-center',
-  right: 'items-end',
+  middle: 'items-center text-center',
+  right: 'items-end text-end',
 };
 
 const VERTICAL_POSITION = {
