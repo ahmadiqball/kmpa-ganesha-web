@@ -20,7 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link href="/uno.css" rel="stylesheet" />
+        <link href="/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+
+        <link href="/favicons/favicon.svg" rel="icon" type="image/svg+xml" />
+
+        <link href="/favicons/favicon.ico" rel="shortcut icon" />
+
+        <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+
+        <link href="/favicons/site.webmanifest" rel="manifest" />
       </head>
 
       <body>
