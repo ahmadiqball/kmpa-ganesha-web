@@ -14,34 +14,34 @@ const SOCIAL_MEDIA = [
 
 export function BlockExecutiveBoard({ description, members, title }: PickPageComponent<'executiveBoard'>) {
   return (
-    <section className="mx-auto my-24 max-w-300">
-      <h4 className="text-center text-6xl color-[#0A2429] font-bold">{ title }</h4>
+    <section className="mx-auto max-w-300 px-4 py-12 md:my-24">
+      <h4 className="text-center text-2xl color-[#0A2429] font-bold md:text-6xl sm:text-4xl">{ title }</h4>
 
-      <p className="mt-8 text-center text-xl">{ description }</p>
+      <p className="mt-4 text-center text-sm md:mt-8 md:text-xl sm:text-lg">{ description }</p>
 
-      <div className="mt-16 flex flex-wrap justify-center gap-x-8 gap-y-12">
+      <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-8 md:mt-16 sm:gap-y-12">
         { members?.map((member, index) => (
-          <div className={ index === 0 ? 'flex-basis-full' : 'flex-basis-1/5' }>
-            <div className={ classNames('', {
-              'max-w-1/5 mx-auto': index === 0,
+          <div className={ classNames('flex-basis-full', index === 0 ? 'sm:flex-basis-full' : 'sm:flex-basis-1/5') }>
+            <div className={ classNames('w-full', {
+              'sm:max-w-60 mx-auto': index === 0,
             }) }
             >
               <Image
                 alt={ member.name }
-                className="mx-auto max-w-60 rounded-full"
+                className="mx-auto max-w-36 rounded-full lg:max-w-60"
                 height={ 400 }
                 src={ sanityImageUrlFor(member.image).url() }
                 width={ 400 }
               />
 
               <div className="mt-4 text-center font-medium">
-                <p className="text-sm color-gray">{ member.memberID }</p>
+                <p className="text-xs color-gray md:text-sm">{ member.memberID }</p>
 
-                <p className="text-xl">{ member.name }</p>
+                <p className="text-base md:text-xl">{ member.name }</p>
 
-                <p className="color-gray">{ member.position }</p>
+                <p className="text-sm color-gray md:text-base">{ member.position }</p>
 
-                <div className="mt-3 flex items-center justify-center gap-3">
+                <div className="mt-1 flex items-center justify-center gap-3 md:mt-3">
                   { SOCIAL_MEDIA.map((item) => (
                     <div>
                       <item.icon className={ classNames('size-4 color-gray hover:cursor-pointer transition-color-280', item.color) } />
