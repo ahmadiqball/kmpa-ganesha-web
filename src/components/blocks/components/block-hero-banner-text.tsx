@@ -32,7 +32,7 @@ export function BlockHeroBannerText({
   title,
 }: PickPageComponent<'heroBannerText'>) {
   return (
-    <section className="relative h-screen min-h-screen w-full py-24" style={{ background: backgroundColor?.hex }}>
+    <section className="relative h-screen min-h-screen w-full py-12 md:py-24" style={{ background: backgroundColor?.hex }}>
       { backgroundImage
         ? (
           <Image
@@ -44,18 +44,18 @@ export function BlockHeroBannerText({
           )
         : null }
 
-      <div className={ classNames('relative z-10 mx-auto h-full max-w-280 w-full flex flex-col text-xl color-white font-light font-poppins',
+      <div className={ classNames('relative z-10 mx-auto h-full px-4 md:px-8 max-w-300 w-full flex flex-col text-xl color-white font-light font-poppins',
         HORIZONTAL_POSITION[textHorizontalPosition], VERTICAL_POSITION[textVerticalPosition]) }
       >
         <div className="flex items-center gap-1">
-          <CoreSanityIcon className="size-6 color-[#D68B30]" svg={ pretitleIcon?.svg } />
+          <CoreSanityIcon className="size-3 color-[#D68B30] md:size-6" svg={ pretitleIcon?.svg } />
 
-          <span>{ pretitle }</span>
+          <span className="text-xs md:text-base">{ pretitle }</span>
         </div>
 
-        <h1 className="text-[96px] leading-[1.05] font-florest">{ title }</h1>
+        <h1 className="mt-2 text-4xl leading-[1.05] font-florest md:text-[96px]">{ title }</h1>
 
-        <p>{ subtitle }</p>
+        <p className="mt-2 text-sm md:text-base">{ subtitle }</p>
       </div>
 
       <div
